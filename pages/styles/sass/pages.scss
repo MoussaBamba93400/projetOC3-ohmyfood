@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+}
+100% {
+        opacity: 1;
+}
+}
 
 $border: 1px solid black;
 
 body {
     overflow-x: hidden;
     margin: 0;
-    font-family: 'Kantumruy Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -36,7 +46,7 @@ header {
         i {
             position: relative;
             bottom: 5px;
-             margin-left: 5%;
+            margin-left: 5%;
             font-size: 30px;
         }
 
@@ -86,12 +96,40 @@ main {
         
        }
 
-       i {
-        color: grey;
-        font-size: 20px;
-        margin-top: 36px;
-        margin-right: 30px;
-       }
+
+       .heart {
+        width: 30px;
+        stroke-width: 30;
+        stroke: black;
+        fill: white;
+        cursor: pointer;
+        
+      }
+
+
+      .heart-empty {
+        z-index: 1;
+        position: absolute;
+        top: 35px;
+        right: 35px;
+
+        &:hover {
+            opacity: 0;
+            transition: 0.5s;
+        }
+      }
+
+      .heart-full {
+        z-index: -1;
+        fill: url(#color);
+        stroke: none;
+        position: absolute;
+        top: 35px;
+        right: 35px;
+      }
+
+
+       
     }
 
 //    MEAL PART
@@ -103,8 +141,8 @@ main {
 
 
         .meal-status {
-            color: lighten(black, 30%);
-            font-weight: smaller;
+            color: black;
+            font-weight: lighter;
             height: fit-content;
             width: 45px;
             border-bottom: 3px solid lighten(grey, 8%);
@@ -126,6 +164,8 @@ main {
             display: flex;
             height: 55px;
             box-shadow: 1px 1px 4px black;
+            transform-origin: 0% 0%;
+            animation: appear 2s both;
             
 
             .meal {
@@ -139,15 +179,17 @@ main {
 
                 p {
                     margin: 0px;
-                    padding-top: 3px;
+                    padding-top: 2px;
                     padding-left: 3%;
                     position: relative;
                     font-size:smaller;
+                    text-overflow: ellipsis;
 
                     span {
                         font-weight: bold;
                         position: absolute;
                         right: 15px;
+                        bottom: 45%;
                     }
                 };
             }
@@ -163,17 +205,69 @@ main {
                 align-items: center;
                 transform-origin: 100%;
                 transition: all 300ms ease;
+
+
+                i {
+                    transform: rotate(0deg);
+                    transition: 300ms ease-in-out;
+                }
             }
 
             &:hover {
                 .icon {
-                    background-color: lighten(grey, 35%);
+                    background-color:#99E2D0 ;
                     width: 55px;
                     transform: scale(1);
+                }
+
+                i {
+                    transform: rotate(360deg);
                 }
             }
 
         }
+
+        #case-1 {
+            animation-delay: 0.1s;
+        }
+    
+        #case-2 {
+            animation-delay: 0.2s;
+        }
+    
+        #case-3 {
+            animation-delay: 0.3s;
+        }
+    
+    
+        #case-4 {
+            animation-delay: 0.4s;
+        }
+    
+    
+        #case-5 {
+            animation-delay: 0.5s;
+        }
+    
+    
+        #case-6 {
+            animation-delay: 0.6s;
+        }
+    
+    
+        #case-7 {
+            animation-delay: 0.7s;
+        }
+    
+    
+        #case-8 {
+            animation-delay: 0.8s;
+        }
+
+        #case-9 {
+            animation-delay: 0.9s;
+        }
+    
     }
    
 
@@ -185,14 +279,26 @@ main {
     .btn {
         font-size: 15px;
         color: white;
-        background-color: violet;
+        background: linear-gradient(170deg,#e872da, #a45bdc);
+        box-shadow: 3px 3px 3px #b9bce5 ;
         height: 50px;
         width: 200px;
         border-radius: 30px;
         border: none;
-        box-shadow: 0px 0px 8px grey;
+
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
+            background: linear-gradient(130deg,#e872da, #a45bdc);
+        }
+        
     }
 
+
+
+    
 
 }
 
@@ -208,7 +314,7 @@ footer {
 
     .logo {
         fill: white;
-        margin-left: 20px;
+        margin-left: 5%;
         margin-top: 15px;
         width: 160px;
         font-family: 'Shrikhand', cursive;
@@ -236,17 +342,30 @@ footer {
             padding: 0px;
             height: 10px;
             font-weight: 400;
+            
+            &:hover {
+                cursor: pointer;
+            }
         }
 
 
         p {
-            margin-bottom: 0px;
             font-weight: lighter;
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .contact {
             position: relative;
             bottom: 13px;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                
+            }
         }
     
 }

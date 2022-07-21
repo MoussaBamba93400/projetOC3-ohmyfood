@@ -1,13 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@mixin flexbox-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+$heart-color: linear-gradient(170deg,#e872da, #a45bdc);
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
 
 body {
     overflow-x: hidden;
     margin: 0;
-    font-family: 'Kantumruy Pro', sans-serif;
-    
-
+    font-family: 'Roboto', sans-serif;
 }
+
+
+
+// Pages loader
+
+.spinner {
+    height: 100%;
+    background: white;
+    margin: auto;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 6;
+    animation: spinner 2s linear ;
+    visibility: hidden;
+    &__border {
+        @include flexbox-center;
+        border: 10px solid transparent;
+        border-top: 10px solid black;
+        border-bottom: 10px solid black;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        animation: spinner-border 2s linear ;
+        z-index: 5;
+        visibility: hidden;
+    }
+    
+}
+
+
+
+@keyframes spinner {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes spinner-border {
+    0% {
+        visibility: visible;
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
 
 // Header part
 
@@ -40,7 +112,7 @@ header {
 
     p {
         padding-top: 8px;
-        font-family: 'Kantumruy Pro', sans-serif;
+        font-family: 'Roboto', sans-serif;
         font-weight: bold;
 
         .fas {
@@ -59,7 +131,7 @@ header {
 
     h2 {
         
-        font-family: 'Kantumruy Pro', sans-serif; 
+        font-family: 'Roboto', sans-serif; 
     }
 
     p {
@@ -69,12 +141,19 @@ header {
     button {
         font-size: 15px;
         color: white;
-        background-color: violet;
+        background: linear-gradient(170deg,#e872da, #a45bdc);
         height: 50px;
         width: 200px;
         border-radius: 30px;
         border: none;
-        box-shadow: 0px 0px 8px grey;
+        box-shadow: 3px 3px 3px #b9bce5 ;
+
+        &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);  
+        }
     }
 }
 
@@ -113,7 +192,7 @@ header {
 
 
             &:hover {
-                background-color: lighten(#00FFFF, 40%);
+                background-color: #f5edff;
                 transform: scale(1.1);
             }
 
@@ -122,12 +201,17 @@ header {
                 display: inline-block;
                 border-radius: 10px;
                 position: relative;
-                background-color: blueviolet;
-                height: 20px;
-                width: 20px;
+                background-color: $color-primary;
+                height: 22px;
+                width: 22px;
                 color: white;
-                right: 17%;
+                right: 10%;
 
+            }
+
+            i{
+                color: #7E7E7E;
+                margin: 0 20px;
             }
 
             .second-item {
@@ -161,16 +245,31 @@ main {
 
         .restaurant {
             margin-bottom: 30px;
-            margin-left: 7%;
+            margin-left: 5%;
             box-shadow: 2px 2px 5px grey;
             border-radius: 1rem;
             width: 325px;
             height: 245px;
+            
+            
+
+            
 
 
             a{
+                position: relative;
                 text-decoration: none;
                 color: inherit;
+            }
+
+            .new {
+                padding: 5px;
+                position: relative;
+                background-color: #99e2d0;
+                color: #008766;
+                width: fit-content;
+                bottom: 110%;
+                left: 73%;
             }
             
 
@@ -191,18 +290,77 @@ main {
 
             p {
                 position: relative;
-                bottom: 25px;
+                bottom: 12%;
                 font-weight: lighter;
                 padding-left: 1rem;
+
+                .heart {
+                    z-index: 2;
+                    width: 30px;
+                    stroke-width: 30;
+                    stroke: black;
+                    fill: white;
+                    cursor: pointer;
+                    position: absolute;
+                    right: 20px;
+                    top: -20px;
+                  }
+
+                  .heart-full {
+                    fill: url(#color);
+                    stroke: none;
+                  }
+
+                  .heart-empty {
+                    width: 30px;
+                    position: absolute;
+                    right: 20px;
+                    top: -20px;
+                    
+                    &:hover {
+                      opacity: 0;
+                      transition: 0.5s;
+                    }
+                }
             }
-        }
+
+            .fa-regular {
+                z-index: 1;
+                position: absolute;
+                right: 15px;
+                font-size: xx-large;
+                top: -17px;
+                background-color: white;
+
+                &:hover {
+                    z-index: -2;
+                }
+            }
+
+            .fa-solid {
+                z-index: -1;
+                position: absolute;
+                right: 15px;
+                font-size: xx-large;
+                top: -17px;
+                color:  linear-gradient(170deg,#e872da, #a45bdc);
+
+                &:hover {
+                    z-index: 1;
+                }
+            }
+
+
+            
+
+           
     }
 
 
 }
 
 
-
+}
 // Footer 
 
 footer {
@@ -210,22 +368,24 @@ footer {
     color: white;
 
     .logo {
-        fill: white;
-        margin-left: 20px;
-        margin-top: 15px;
-        width: 160px;;
+        color: white;
+        margin-left: 8%;
+        padding-top: 20px;
+        width: 160px;
+        font-family: 'Shrikhand', cursive;;
     }
 
 
 
+
     div {
-        margin-left: 5%;
+        margin-left: 8%;
         margin-bottom: 20px;
     }
     
 
     .fa-utensils {
-        margin-right: 7px;
+        margin-right: 5px;
     }
 
       .fa-handshake-angle {
@@ -249,6 +409,11 @@ footer {
         .contact {
             position: relative;
             bottom: 13px;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
         }
     
 }
@@ -256,5 +421,67 @@ footer {
 
 
 
+
+// Desktop version
+@media only screen and (min-width: 745px) {
+    
+
+    .navbar-item {
+        display: flex;
+    }
+
+
+    main {
+        display: inline;
+        background-color: #00FFFF;
+
+        .restaurants {
+            display: flex;
+            flex-wrap: wrap;
+   
+           .restaurant {
+               margin-bottom: 30px;
+               margin-left: 7%;
+               box-shadow: 2px 2px 5px grey;
+               border-radius: 1rem;
+               width: 315px;
+               height: 195px;
+   
+   
+               a{
+                text-decoration: none;
+                color: inherit;
+            }
+               
+   
+              
+   
+               img {
+                   width: 100%;
+                   height: 120px;
+                   object-fit: cover;
+                   border-radius: 1rem 1rem 0 0;
+               }
+   
+               h3 {
+                   position: relative;
+                   bottom: 10px;
+                   padding-left: 1rem;
+               }
+   
+               p {
+                   position: relative;
+                   bottom: 25px;
+                   font-weight: lighter;
+                   padding-left: 1rem;
+               }
+           }
+       }
+   
+   
+   }
+   
+   
+}
 
 

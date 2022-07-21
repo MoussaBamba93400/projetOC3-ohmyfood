@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/ebf3b35924.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
        <div class="bannier">
@@ -16,15 +17,36 @@
        </div>
 
        <div class="resto-img">
-        <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+        <img src="../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="restaurant image">
        </div>
     </header>
 
 
     <main>
         <div class="resto-title">
-            <h2>À la française</h2>
-            <i class="fa-regular fa-heart"></i>
+            <h2>À la française</h2>         
+            <svg class="heart heart-full" viewBox="-20 0 550 550"  xml:space="preserve">
+                <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+                         c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+                         c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+                         s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+                         C512,93.417,453.532,30,376,30z"/>
+              <defs>
+                <linearGradient id="color">
+                      <stop offset="0%" stop-color="#9356DC"/>
+                      <stop offset="100%" stop-color="#FF79DA"/>
+                </linearGradient>
+              </defs>                                   
+            </svg>
+
+            <svg class="heart heart-empty" viewBox="-20 0 550 550"  xml:space="preserve">
+                <path d="M376,30c-27.783,0-53.255,8.804-75.707,26.168c-21.525,16.647-35.856,37.85-44.293,53.268
+                         c-8.437-15.419-22.768-36.621-44.293-53.268C189.255,38.804,163.783,30,136,30C58.468,30,0,93.417,0,177.514
+                         c0,90.854,72.943,153.015,183.369,247.118c18.752,15.981,40.007,34.095,62.099,53.414C248.38,480.596,252.12,482,256,482
+                         s7.62-1.404,10.532-3.953c22.094-19.322,43.348-37.435,62.111-53.425C439.057,330.529,512,268.368,512,177.514
+                         C512,93.417,453.532,30,376,30z"/>                                  
+            </svg>
+
         </div>
 
         <article>
@@ -32,7 +54,7 @@
                 <h3>ENTRÉES</h3>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-1">
                 <div class="meal">
                     <h4>Tartare de poulpe acidulé</h4>
                     <p>Aux zests d'orange <span>25€</span></p>
@@ -43,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-2">
                 <div class="meal">
                     <h4>Velouté de légumes d'antan</h4>
                     <p>Carotte, panais, topinambour <span>35€</span></p>
@@ -54,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-3">
                 <div class="meal">
                     <h4>Soupe à l'oignon</h4>
                     <p>Revisitée <span>20€</span></p>
@@ -71,7 +93,7 @@
                 <h3>PLATS</h3>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-4">
                 <div class="meal">
                     <h4>Coquilles Saint-Jacques</h4>
                     <p>Accompagnées d'une purée de panais<span>40€</span></p>
@@ -82,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-5">
                 <div class="meal">
                     <h4>Magret de canard</h4>
                     <p>Et parmentier de pommes de terres <span>35€</span></p>
@@ -93,7 +115,7 @@
                 </div>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-6">
                 <div class="meal">
                     <h4>Pigeonneau d'Ille-et-€ilaine</h4>
                     <p>Sur son lit de gnocchis aux légumes <span>44€</span></p>
@@ -111,7 +133,7 @@
                 <h3>DESSERTS</h3>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-7">
                 <div class="meal">
                     <h4>Pétales de violettes glacés</h4>
                     <p>Et purée de noisettes <span>18€</span></p>
@@ -122,7 +144,7 @@
                 </div>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-8">
                 <div class="meal">
                     <h4>Fondant au chocolat</h4>
                     <p>Revisité <span>22€</span></p>
@@ -133,7 +155,7 @@
                 </div>
             </div>
 
-            <div class="items">
+            <div class="items" id="case-9">
                 <div class="meal">
                     <h4>Millefeuille croustillant</h4>
                     <p>Myrtilles et pâte d'amande <span>23€</span></p>
@@ -157,7 +179,7 @@
             <h3><i class="fa-solid fa-utensils"></i>Proposer un restaurant</h3>
             <h3><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</h3>
             <p>Mentions légales</p>
-            <p class="contact">Contact</p>
+            <p class="contact"><a href="mailto:ohmyfood@gmail.com">Contact</a></p>
             </div>
     
     </footer>
