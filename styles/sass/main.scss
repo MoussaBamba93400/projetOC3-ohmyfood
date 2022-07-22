@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 @mixin flexbox-center {
@@ -324,32 +324,9 @@ main {
                 }
             }
 
-            .fa-regular {
-                z-index: 1;
-                position: absolute;
-                right: 15px;
-                font-size: xx-large;
-                top: -17px;
-                background-color: white;
+            
 
-                &:hover {
-                    z-index: -2;
-                }
-            }
-
-            .fa-solid {
-                z-index: -1;
-                position: absolute;
-                right: 15px;
-                font-size: xx-large;
-                top: -17px;
-                color:  linear-gradient(170deg,#e872da, #a45bdc);
-
-                &:hover {
-                    z-index: 1;
-                }
-            }
-
+            
 
             
 
