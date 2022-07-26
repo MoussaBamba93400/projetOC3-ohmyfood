@@ -98,7 +98,6 @@ main article {
   margin-bottom: 30px;
 }
 main article .meal-status {
-  color: black;
   font-weight: lighter;
   height: fit-content;
   width: 45px;
@@ -106,6 +105,7 @@ main article .meal-status {
   padding-bottom: 0px;
 }
 main article .meal-status h3 {
+  color: #666666;
   margin: 0px;
   padding-bottom: 2px;
 }
@@ -114,18 +114,31 @@ main article .items {
   border-radius: 13px;
   margin-top: 20px;
   display: flex;
+  flex-wrap: nowrap;
   height: 55px;
   box-shadow: 1px 1px 4px black;
   transform-origin: 0% 0%;
   animation: appear 2s both;
 }
+main article .items .price {
+  width: 40px;
+  padding-left: 0px;
+  padding-top: 23px;
+  font-weight: bold;
+  font-size: smaller;
+}
 main article .items .meal {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 main article .items .meal h4 {
   margin: 0px;
   padding-left: 3%;
   padding-top: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 main article .items .meal p {
   margin: 0px;
@@ -133,12 +146,9 @@ main article .items .meal p {
   padding-left: 3%;
   position: relative;
   font-size: smaller;
-}
-main article .items .meal p span {
-  font-weight: bold;
-  position: absolute;
-  right: 15px;
-  bottom: 45%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 main article .items .icon {
   color: white;
@@ -217,18 +227,20 @@ footer {
   margin: 0px;
   background-color: #2e2e2e;
   color: white;
-  height: 100%;
+  height: 200px;
 }
 footer .logo {
   fill: white;
   margin-left: 5%;
-  margin-top: 15px;
   width: 160px;
   font-family: "Shrikhand", cursive;
+  position: relative;
+  top: 16px;
 }
 footer div {
   margin-left: 5%;
-  margin-bottom: 20px;
+  position: relative;
+  top: 25px;
 }
 footer .fa-utensils {
   margin-right: 7px;
@@ -247,6 +259,7 @@ footer h3:hover {
 }
 footer p {
   font-weight: lighter;
+  margin-top: 20px;
 }
 footer p:hover {
   cursor: pointer;
